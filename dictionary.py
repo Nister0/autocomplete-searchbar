@@ -25,21 +25,21 @@ class dictionary:
         return data
     
     def divide_data(self, data):
-        divData = []
-        divData.append("")
+        divided_data = []
+        divided_data.append("")
         #print(data)
         j = 0
         for i in data:
             if i == " ":
-                divData.append("")
+                divided_data.append("")
                 j += 1
             else:
-                divData[j] = divData[j] + i
+                divided_data[j] = divided_data[j] + i
 
-        while divData and divData[-1] == "":
-            divData.pop(-1)
+        while divided_data and divided_data[-1] == "":
+            divided_data.pop(-1)
             
-        return divData
+        return divided_data
 
     def print_data(self):
         for i in self.data:
