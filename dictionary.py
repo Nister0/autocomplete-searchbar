@@ -1,6 +1,9 @@
 import os
 
 class dictionary:
+    '''
+    handles initial file loading for the list of words we want to suggest from.
+    '''
     def __init__(self, file):
         '''
         intitialize class, open given file and save it to self.data
@@ -29,7 +32,7 @@ class dictionary:
     
     def divide_data(self, data):
         '''
-        slices data string into individual words and saves it in a list (might will be changed to dictionary later.).
+        slices data string into individual words and saves it in a list (might be changed to dictionary later.).
         '''
         divided_data = []
         divided_data.append("")
