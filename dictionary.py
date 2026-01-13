@@ -4,19 +4,22 @@ class dictionary:
     '''
     handles initial file loading for the list of words we want to suggest from.
     '''
-    def __init__(self, file):
+
+    def __init__(self, file: str):
         '''
         intitialize class, open given file and save it to self.data
         '''
-        self.data = self.divide_data(self.open_file(file))
+
+        self.data : list[str] = self.divide_data(self.open_file(file))
 
         if not self.data:
             raise Exception("File is empty.")
 
-    def open_file(self, file):
+    def open_file(self, file: str) -> list[str]:
         '''
         opens and reads given file if it is in the same folder or subfolder. for example file="test.txt" or if the file is in a sub folder file="files/test.txt".
         '''
+
         dir = os.path.dirname(os.path.abspath(__file__))
         file_path = os.path.join(dir, file)
 
@@ -30,10 +33,11 @@ class dictionary:
             
         return data
     
-    def divide_data(self, data):
+    def divide_data(self, data: str):
         '''
         slices data string into individual words and saves it in a list (might be changed to dictionary later.).
         '''
+
         divided_data = []
         divided_data.append("")
         #print(data)
