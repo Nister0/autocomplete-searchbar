@@ -34,9 +34,9 @@ class search:
                 if j == len(pattern):
                     break
             
-        return len(word) / len(pattern)
+        return len(pattern) / len(word)
 
 
 if __name__ == "__main__": 
     s = search([""])
-    print(s.match("all", "hallo"))
+    print(s.match("allo", "hallo"))
