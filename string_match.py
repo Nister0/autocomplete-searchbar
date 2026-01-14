@@ -6,11 +6,11 @@ class match:
     def __init__(self):
         self.dictionary = []
 
-    def fastforward(self, pattern : str, dictionary: list[str]) -> list[tuple[str, float]]:
+    def fast_forward(self, pattern : str, dictionary: list[str]) -> list[tuple[str, float]]:
         self.dictionary = dictionary
-        return self.sort(pattern)
+        return self._sort(pattern)
 
-    def sort(self, pattern: str) -> dict[str, float]:
+    def _sort(self, pattern: str) -> dict[str, float]:
         '''
         sorts data word list based on input, sorted by match % to give the highest matching words.
         '''
@@ -28,22 +28,9 @@ class match:
         calculates % of matching letters. if str in input: % < 0 else: % = 0.
         this could be done easier with with python inbuilt functions.
         '''
-
-        j = 0
-        for i in range(len(dictionary)):
-            if len(dictionary) < len(pattern):
-                return 0
-            
-            if dictionary[i] != pattern[j]:
-                j == 0
-            else:
-                j += 1
-            dictionary[0:]
-            '''
-            fix later not working correctly when pattern len == dict len.
-            '''
-            
-        return len(pattern) / len(dictionary)
+        if pattern in dictionary:
+            return len(pattern) / len(dictionary)
+        return 0
 
     def _mergesort(self, matched_words : list[tuple[str, float]]) -> list[tuple[str, float]]:
         '''
