@@ -17,7 +17,7 @@ class match:
         for i in self.dictionary:
             output.append((i, self._match(input, i)))
 
-        return self._sort(output)
+        return self._mergesort(output)
 
 
     def _match(self, pattern: str, word: str) -> float:
@@ -58,18 +58,24 @@ class match:
 
         return self._merge(l, r)
     
-    def _merge(self, l, r): 
+    def _merge(self, l : list[tuple[str, float]], r : list[tuple[str, float]]): 
         '''
         subfunction for merge sort. merges two lists.
         '''
-        xs = []
-        nl = len(l) - 1
-        nr = len(r) - 1
-        il = 0
-        
-        for i in range():
-            pass
 
+        xs = []
+        while l and r:
+            if l[0][1] >= r[0][1]:
+                xs.append(l.pop(0))
+            else:
+                xs.append(r.pop(0))
+
+        if l:
+            xs.append(l[0:(len(l))])
+        if r:
+            xs.append(r[0:(len(r))])
+
+        return xs
 
 if __name__ == "__main__": 
     s = match([""])
