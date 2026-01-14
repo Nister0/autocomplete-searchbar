@@ -15,5 +15,5 @@ class autcomplete:
 
 if __name__ == "__main__":
     ac = autcomplete("files/lexikon.txt")
-    for i in ac.suggest("alle"):
+    for i in ac.suggest("al"):
         print(i)
