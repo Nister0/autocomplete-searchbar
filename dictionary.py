@@ -10,7 +10,7 @@ class dictionary:
         intitialize class, open given file and save it to self.data
         '''
 
-        self.data : list[str] = self.divide_data(self.open_file(file))
+        self.data : list[str] = self._divide_data(self.open_file(file))
 
         if not self.data:
             raise Exception("File is empty.")
@@ -33,7 +33,7 @@ class dictionary:
             
         return data
     
-    def divide_data(self, data: str):
+    def _divide_data(self, data: str):
         '''
         slices data string into individual words and saves it in a list (might be changed to dictionary later.).
         '''
