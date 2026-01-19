@@ -28,7 +28,7 @@ class match:
         calculates % of matching letters. if str in input: % < 0 else: % = 0.
         this could be done easier with with python inbuilt functions.
         '''
-        if pattern in dictionary:
+        if pattern.lower() in dictionary.lower():
             return len(pattern) / len(dictionary)
         return 0
 
@@ -72,5 +72,5 @@ class match:
 
 if __name__ == "__main__": 
     s = match()
-    print(s.fastforward("hallo",["halloooo"])) 
+    print(s.fast_forward("AL",["halloooo"])) 
 
